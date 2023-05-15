@@ -1,0 +1,150 @@
+1
+#include<graphics.h>
+#include<conio.h>
+#include<math.h>
+void setPixel(int x, int y, int h, int k)
+{
+    putpixel(x+h, y+k, RED);
+    putpixel(x+h, -y+k, RED);
+    putpixel(-x+h, -y+k, RED);
+    putpixel(-x+h, y+k, RED);
+    putpixel(y+h, x+k, RED);
+    putpixel(y+h, -x+k, RED);
+    putpixel(-y+h, -x+k, RED);
+    putpixel(-y+h, x+k, RED);
+}
+main()
+{
+    int gd=0, gm,h,k,r;
+    double x,y,x2;
+    h=200, k=200, r=100;
+    initgraph(&gd, &gm, "C:\\TC\\BGI ");
+    setbkcolor(WHITE);
+    x=0,y=r;
+    x2 = r/sqrt(2);
+    while(x<=x2)
+    {
+        y = sqrt(r*r - x*x);
+        setPixel(floor(x), floor(y), h,k);
+        x += 1;
+    }
+    getch();
+    closegraph();
+    return 0;
+}
+2.
+#include<graphics.h>
+#include<bits/stdc++.h>
+#include<math.h>
+void plot8pixel(int x,int y,int h,int k)
+{
+    putpixel(x+h,y+k,8);
+    putpixel(x+h,-y+k,8);
+    putpixel(-x+h,y+k,8);
+    putpixel(-x+h,-y+k,8);
+    putpixel(y+h,x+k,8);
+    putpixel(y+h,-x+k,8);
+    putpixel(-y+h,x+k,8);
+    putpixel(-y+h,-x+k,8);
+}
+int main()
+{
+    int gd=DETECT,gm;
+    initgraph(&gd,&gm,"");
+    setbkcolor(WHITE);
+    int x,y,x1,y1,r,h,k,theta;
+    float n=3.14159/180;
+    h=200;k=200;r=100;
+    for(theta=0; theta<=45; theta++)
+    {
+        x1=r*cos(theta*n);
+        y1=r*sin(theta*n);
+        x=int(x1+0.5);
+        y=int(y1+0.5);
+        plot8pixel(x,y,h,k);
+    }
+    getch();
+    closegraph();
+}
+3
+#include<graphics.h>
+#include<bits/stdc++.h>
+#include<math.h>
+void plot8pixel(int x,int y,int h,int k)
+{
+    putpixel(x+h,y+k,8);
+    putpixel(x+h,-y+k,8);
+    putpixel(-x+h,y+k,8);
+    putpixel(-x+h,-y+k,8);
+    putpixel(y+h,x+k,8);
+    putpixel(y+h,-x+k,8);
+    putpixel(-y+h,x+k,8);
+    putpixel(-y+h,-x+k,8);
+}
+int main()
+{
+    int gd=DETECT,gm;
+    initgraph(&gd,&gm,"");
+    setbkcolor(WHITE);
+     int x,y,r,d,h,k,theta;
+    h=200;
+    k=200;
+    r=100;
+    x=0;
+    y=r;
+    d=3-(2*r);
+    while(x<=y)
+    {
+        plot8pixel(x,y,h,k);
+        if(d<0) d=d+(4*x)+6;
+        else
+        {
+            d=d+(4*(x-y))+10;
+            y--;
+        }
+        x++;
+    }
+    getch();
+    closegraph();
+}
+4
+#include<graphics.h>
+#include<bits/stdc++.h>
+#include<math.h>
+ void plot8pixel(int x,int y,int h,int k)
+{
+    putpixel(x+h,y+k,8);
+    putpixel(x+h,-y+k,8);
+    putpixel(-x+h,y+k,8);
+    putpixel(-x+h,-y+k,8);
+    putpixel(y+h,x+k,8);
+    putpixel(y+h,-x+k,8);
+    putpixel(-y+h,x+k,8);
+    putpixel(-y+h,-x+k,8);
+}
+int main()
+{
+    int gd=DETECT,gm;
+    initgraph(&gd,&gm,"");
+    setbkcolor(WHITE);
+    int x,y,r,d,h,k,theta;
+    h=200;
+    k=200;
+    r=100;
+    x=0;
+    y=r;
+    d=3-(2*r);
+    while(x<=y)
+    {
+        plot8pixel(x,y,h,k);
+        if(d<0) d=d+(2*x)+3;
+        else
+        {
+            d=d+(2*(x-y))+5;
+            y--;
+        }
+        x++;
+    }
+    getch();
+    closegraph();
+}

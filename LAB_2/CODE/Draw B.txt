@@ -1,0 +1,24 @@
+Draw B
+#include<bits/stdc++.h>
+#include <graphics.h>
+using namespace std;
+
+int main()
+{
+    int gd = DETECT, gm;
+	initgraph(&gd, &gm, "");
+
+	int x = 200;
+	int y = 140;
+	int start_angle = 270;
+	int end_angle = 90;
+	int radius = 100;
+	line(200, 40, 200, 440);
+	arc(x, y, start_angle, end_angle, radius);
+	arc(x, y+200, start_angle, end_angle, radius);
+
+	getch();
+	closegraph();
+
+	return 0;
+}
