@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1686829050 source:f:\7bm\cg_lab\cg\cg_lab\main.cpp
+	<bits/stdc++.h>
+	<conio.h>
+	<graphics.h>
+
